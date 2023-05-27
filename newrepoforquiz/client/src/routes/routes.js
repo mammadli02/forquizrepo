@@ -1,41 +1,29 @@
-import AddPeoples from "../pages/AddPeoples";
-import DetailPeople from "../pages/Detailpeople";
-import EditPages from "../pages/EditPages";
+import Add from "../pages/Add";
+import Detail from "../pages/Detail";
+import Edit from "../pages/Edit";
 import Home from "../pages/Home";
 import MainRoot from "../pages/MainRoot";
-import NotFound from "../pages/NotFound";
-import Peoples from "../pages/Peoples";
 
-
-export const ROUTES = [
+export const ROUTES=[
     {
         path:'/',
-        element: <MainRoot/>,
+        element:<MainRoot/>,
         children:[
             {
-            path:'/',
-            element: <Home/>
-        },
-            {
-                path:'/peoples',
-                element: <Peoples/>
-            },
-            
-            {
-                path:'/add-people',
-                element: <AddPeoples/>
+                path:'/',
+                element:<Home/>
             },
             {
-                path:'/peoples/:id',
-                element: <DetailPeople/>
+                path:'/add',
+                element:<Add/>
             },
             {
-                path:'/peoples/edit/:id',
-                element: <EditPages/>
+                path:'/home/edit/:id',
+                element:<Edit/>
             },
             {
-                path:'*',
-                element: <NotFound/>
+            path:'/home/:id',
+            element:<Detail/>
             }
         ]
     }
